@@ -1,0 +1,5 @@
+// TODO Add Spring Data repositories for Animal, Food and DietEntry in this package
+
+// TODO Add a method findDietEntryByAnimalType in the DietEntry repository
+
+// TODO Configure the FoodRepository to use the /food URI instead of /foods

@@ -1,0 +1,2 @@
+// TODO Add a file application.properties
+// TODO Configure Spring Data REST URIs to start with /api

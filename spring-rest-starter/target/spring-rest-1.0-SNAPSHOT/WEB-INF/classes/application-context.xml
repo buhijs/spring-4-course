@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bookService" class="com.realdolmen.education.BookServiceBean">
+        <property name="books">
+            <list>
+                <bean class="com.realdolmen.education.Book">
+                    <property name="id" value="1"/>
+                    <property name="isbn" value="0000000000001"/>
+                    <property name="title" value="A Game Of Thrones"/>
+                    <property name="author" value="George R. R. Martin"/>
+                </bean>
+                <bean class="com.realdolmen.education.Book">
+                    <property name="id" value="2"/>
+                    <property name="isbn" value="0000000000002"/>
+                    <property name="title" value="Nineteen Eighty Four"/>
+                    <property name="author" value="George Orwell"/>
+                </bean>
+                <bean class="com.realdolmen.education.Book">
+                    <property name="id" value="3"/>
+                    <property name="isbn" value="0000000000003"/>
+                    <property name="title" value="Uncle Tom's Cabin"/>
+                    <property name="author" value="Harriet Bleecher Stowe"/>
+                </bean>
+            </list>
+        </property>
+        <property name="managers">
+            <set>
+                <value>John Snow</value>
+                <value>Sansa Stark</value>
+            </set>
+        </property>
+        <property name="bookStoreName" value="Night's Watch Bookstore"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,5 @@
+insert into author (id, version, first_name, last_name, email, user_name, password) values (1, 1, 'Candy', 'Nuwelle', 'candy.nuwelle@acme.com', 'cnuwelle', 'password');
+insert into author (id, version, first_name, last_name, email, user_name, password) values (2, 1, 'Magda', 'Nuwelle', 'magda.nuwelle@acme.com', 'mnuwelle', 'password');
+insert into author (id, version, first_name, last_name, email, user_name, password) values (3, 1, 'Alain', 'Provist', 'alain.provist@acme.com', 'aprovist', 'password');
+insert into author (id, version, first_name, last_name, email, user_name, password) values (4, 1, 'Benny', 'Slim', 'benny.slim@acme.com', 'bslim', 'password');
+insert into author (id, version, first_name, last_name, email, user_name, password) values (5, 1, 'Thea', 'Traal', 'thea.traal@acme.com', 'ttraal', 'password');
