@@ -1,8 +1,10 @@
 package com.realdolmen.spring.domain;
 
+import javax.persistence.*;
 import java.util.Objects;
 
 // TODO: enhance this class for use with JPA.
+@Entity
 public class Animal {
     public enum Type {
         bear,
@@ -14,10 +16,13 @@ public class Animal {
         kangaroo
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
 
+    @Enumerated(EnumType.STRING)
     private Type type;
 
     private int age;

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:amq="http://activemq.apache.org/schema/core"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+    <!--
+        We use Apache MQ to setup an embedded MOM.
+
+        It is perfectly possible (and likely to be the case in the wild) to use an external MOM, such as one provided by a JEE application server (JBoss, WebLogic, ...)
+        In this case we would need to lookup the connection factory and queue objects using JNDI.
+    -->
+    <amq:broker id="broker" useJmx="false" persistent="false">
+        <amq:transportConnectors>
+            <amq:transportConnector uri="tcp://localhost:0"/>
+        </amq:transportConnectors>
+    </amq:broker>
+
+    <!-- In JEE this would be exposed by the application server using JNDI. -->
+    <amq:connectionFactory id="jmsFactory" brokerURL="vm://localhost"/>
+
+    <!--
+        This queue object would be similar to a JNDI exposed JMS queue (java:/bookQueue).
+        Obtaining one from JEE would require <ctx:jndi-lookup .../>.
+     -->
+    <bean id="bookQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <property name="physicalName" value="bookQueue"/>
+    </bean>
+
+</beans>

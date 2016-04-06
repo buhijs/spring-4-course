@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:ws="http://www.springframework.org/schema/web-services"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                     http://www.springframework.org/schema/web-services http://www.springframework.org/schema/web-services/web-services.xsd">
+
+       <ws:annotation-driven/>
+
+       <!-- TODO: add a dynamic WSDL configuration here. It should point to /holidayService.wsdl. -->
+       <ws:dynamic-wsdl id="holidayService" portTypeName="holidayServicePortType" locationUri="/holidayService">
+              <ws:xsd location="classpath:/schemas/holidayService.xsd"/>
+       </ws:dynamic-wsdl>
+
+</beans>

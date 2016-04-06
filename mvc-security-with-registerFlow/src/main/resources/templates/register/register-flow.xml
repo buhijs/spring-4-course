@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+      http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+>
+    <var name="author" class="com.realdolmen.spring.blog.domain.Author"/>
+    <var name="blog" class="com.realdolmen.spring.blog.domain.Blog"/>
+
+    <view-state id="register" view="indexFlow">
+        <transition to="formRegister" on="goToForm"/>
+    </view-state>
+
+    <view-state id="formRegister" view="registerFlow" model="author">
+        <transition to="confirmPage" on="goToConfirm"/>
+    </view-state>
+
+    <view-state id="confirmPage" view="confirmPage" model="blog">
+        <transition to="saveState" on="goToSave"/>
+    </view-state>
+
+    <action-state id="saveState">
+        <evaluate expression="authorBlogService.save(author, blog)"/>
+        <transition to="success"/>
+    </action-state>
+
+    <end-state id="success" view="externalRedirect:/authors"/>
+    <end-state id="endState" view="cancel"/>
+
+    <global-transitions>
+        <transition to="endState" on="goToCancelState" validate="false"/>
+        <transition on="back" to="${flowScope.lastStateId}" validate="false"/>
+    </global-transitions>
+</flow>

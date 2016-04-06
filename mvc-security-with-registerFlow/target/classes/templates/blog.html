@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragments :: head"></head>
+<body>
+<div th:replace="fragments/fragments :: header"></div>
+
+<div class="container">
+    <div th:replace="fragments/fragments :: div#page-header"></div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h4>Create a Blog</h4>
+
+            <form action="#" th:action="@{/blog}" method="post" th:object="${blog}">
+                <div class="form-group" th:class="${#fields.hasErrors('title')}? 'has-error'">
+                    <label th:for="${#ids.next('title')}">Title:</label>
+                    <input type="text" th:field="*{title}" class="form-control"/>
+                    <span th:if="${#fields.hasErrors('title')}" class="help-block" th:errors="*{title}"></span>
+                </div>
+                <div class="form-group" th:class="${#fields.hasErrors('author')}? 'has-error'">
+                    <label th:for="${#ids.next('author')}">Author</label>
+                    <select th:name="authorId" class="form-control">
+                        <option th:each="a : ${authorList}" th:value="${a.id}" th:text="${a.userName}"></option>
+                    </select>
+                    <span th:if="${#fields.hasErrors('author')}" class="help-block" th:errors="*{author}"></span>
+                </div>
+                <br/>
+                <button type="submit" class="btn btn-primary">Create Blog</button>
+            </form>
+
+        </div>
+    </div>
+
+    <hr/>
+</div>
+
+<div th:replace="fragments/fragments :: div.scripts"></div>
+</body>
+</html>

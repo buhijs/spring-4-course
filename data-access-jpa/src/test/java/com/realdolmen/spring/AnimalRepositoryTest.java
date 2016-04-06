@@ -18,6 +18,7 @@ import static org.junit.Assert.assertNotNull;
 @ActiveProfiles("test")
 @Transactional
 public class AnimalRepositoryTest {
+
     @Autowired
     private AnimalRepository animalRepository;
 

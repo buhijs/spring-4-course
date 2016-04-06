@@ -16,7 +16,9 @@ public class AuthorControllerTest extends AbstractControllerTest {
     @Test
     public void authorsDisplaysList() throws Exception {
         // TODO: Implement a unit test to verify that /authors puts a list of authors on the model
-        Assert.fail("todo");
+        mvc.perform(get("/authors"))
+            .andExpect(model().hasNoErrors())
+            .andExpect(model().attributeExists("authorList"));
     }
 
     private List<Author> dummyAuthors() {
@@ -29,5 +31,7 @@ public class AuthorControllerTest extends AbstractControllerTest {
     @Test
     public void removePropagatesToRepositoryDelete() throws Exception {
         // TODO: Implement a unit test to verify that /authors/1/remove removes the author from the repository
+        mvc.perform(get("/authors/1/remove"))
+            .andExpect(model().hasNoErrors());
     }
 }

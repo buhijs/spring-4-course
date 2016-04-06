@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragments :: head"></head>
+<body>
+<div th:replace="fragments/fragments :: header"></div>
+
+<div class="container">
+    <div th:replace="fragments/fragments :: div#page-header"></div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h4>WEBFLOW</h4>
+            <a th:href="@{${flowExecutionUrl}(_eventId=goToEndState)}">Go to end state</a>
+            <a th:href="@{${flowExecutionUrl}(_eventId=goToNextState)}">Go to next state</a>
+            <!--<input type="submit" id="goToNextState" value="Click this to go to next state in flow"/>-->
+        </div>
+    </div>
+
+    <hr/>
+</div>
+
+<div th:replace="fragments/fragments :: div.scripts"></div>
+</body>
+</html>

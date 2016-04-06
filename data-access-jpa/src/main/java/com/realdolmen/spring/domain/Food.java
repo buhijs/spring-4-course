@@ -64,6 +64,14 @@ public abstract class Food {
                 Objects.equals(dietEntries, food.dietEntries);
     }
 
+    public List<DietEntry> getDietEntries() {
+        return dietEntries;
+    }
+
+    public void setDietEntries(List<DietEntry> dietEntries) {
+        this.dietEntries = dietEntries;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, calories, dietEntries);

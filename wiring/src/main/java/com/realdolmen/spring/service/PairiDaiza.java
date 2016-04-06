@@ -12,7 +12,6 @@ public class PairiDaiza implements Zoo {
     private List<Animal> animals = new ArrayList<>();
 
     // fetch the FoodDistributionService
-
     @Autowired
     private FoodDistributionService foodDistributionService;
 

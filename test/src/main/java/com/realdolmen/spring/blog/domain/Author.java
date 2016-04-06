@@ -1,5 +1,6 @@
 package com.realdolmen.spring.blog.domain;
 
+import com.realdolmen.spring.blog.validator.AuthorConstraint;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -27,7 +28,7 @@ public class Author implements Serializable {
     @Column(length = 255, nullable = false)
     @NotBlank
     @Size(min = 1, max = 255)
-    @Email
+    @AuthorConstraint
     private String email;
     @Column(length = 50, nullable = false)
     @NotBlank

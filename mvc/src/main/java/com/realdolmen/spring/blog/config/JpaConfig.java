@@ -17,9 +17,6 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 
-/**
- * Created by cda5732 on 14/04/2015.
- */
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "com.realdolmen.spring.blog.dao")
@@ -60,7 +57,7 @@ public class JpaConfig {
     @Profile("production")
     Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "create");
+        properties.setProperty("hibernate.hbm2ddl.auto", "update");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         return properties;
     }

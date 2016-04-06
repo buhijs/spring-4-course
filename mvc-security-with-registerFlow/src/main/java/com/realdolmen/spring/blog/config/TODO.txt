@@ -1,0 +1,16 @@
+TODO The following tasks apply to the SecurityConfig class you will create in Exercise 2
+
+TODO Exercise 2: Create the Spring Security Java configuration class
+TODO Exercise 2: Override the configure(AuthenticationManagerBuilder) method and configure a user and administrator with an in-memory user store
+
+TODO Exercise 3: Override the configure(HttpSecurity) method
+TODO Exercise 3: Protect the /authors, /blogs and /blog pages to logged in users
+TODO Exercise 3: Redirect to your login page
+TODO Exercise 3: Add remember-me functionality
+TODO Exercise 3: Configure logout and add a logout link to your pages
+
+TODO Exercise 4: Protect the remove URLs to users with ADMIN role
+
+TODO Exercise 5: Add a user with ADMIN role to your database
+TODO Exercise 5: Replace the in-memory user store with a JDBC-backed user store, so your registered users can now log in
+TODO Exercise 5: Enable expressions for method level security

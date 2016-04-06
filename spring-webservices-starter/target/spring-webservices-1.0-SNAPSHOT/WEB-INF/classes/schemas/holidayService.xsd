@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://education.realdolmen.com/spring-webservices/domain"
+		xmlns:tns="http://education.realdolmen.com/spring-webservices/domain"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified">
+
+	<element name="HolidayRequest">
+		<complexType>
+			<sequence>
+				<element name="Holiday" type="tns:Holiday"/>
+				<element name="Employee" type="tns:Employee"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="HolidayResponse">
+		<complexType>
+			<sequence>
+				<element name="Result" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<complexType name="Holiday">
+		<sequence>
+			<element name="StartDate" type="string"/>
+			<element name="EndDate" type="string"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="Employee">
+		<sequence>
+			<element name="Number" type="string" />
+			<element name="FirstName" type="string"/>
+			<element name="LastName" type="string"/>
+		</sequence>
+	</complexType>
+
+</schema>

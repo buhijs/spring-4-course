@@ -50,7 +50,7 @@ public class FoodRepositoryTest {
         assertEquals(3, foods.size());
         assertEquals("Apple", foods.get(0).getName());
         assertEquals("Carrot", foods.get(1).getName());
-        assertEquals("Salmon", foods.get(2).getName());
+        assertEquals("Banana", foods.get(2).getName());
     }
 
     private int countAllFood() {
