@@ -12,9 +12,6 @@ import java.util.List;
 
 import static org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder.fromMappingName;
 
-/**
- * Created by cda5732 on 16/04/2015.
- */
 @Controller
 @RequestMapping("/authors")
 public class AuthorController {

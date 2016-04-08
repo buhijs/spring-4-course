@@ -31,8 +31,17 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <!-- TODO Add the spring-boot-starter-cache dependency to the pom.xml -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
 
         <!-- TODO Add the net.sf.ehcache:ehcache:2.10.1 dependency to the pom.xml -->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache-core</artifactId>
+            <version>2.6.11</version>
+        </dependency>
 
         <dependency>
             <groupId>mysql</groupId>

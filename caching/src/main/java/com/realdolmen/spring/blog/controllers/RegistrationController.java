@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 
-/**
- * Created by cda5732 on 16/04/2015.
- */
 @Controller
 @RequestMapping("/register")
 public class RegistrationController {

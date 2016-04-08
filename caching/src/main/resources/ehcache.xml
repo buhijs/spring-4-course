@@ -1,0 +1,3 @@
+<ehcache>
+    <cache name="ehCache" maxBytesLocalHeap="50m" timeToLiveSeconds="1"></cache>
+</ehcache>
